@@ -1,0 +1,4 @@
+---
+# vars file for sbaerlocher.ovirt-guest-agent
+
+ovirt_guest_agent_service_name: ovirt-guest-agent

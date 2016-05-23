@@ -1,0 +1,6 @@
+---
+# tasks file for sbaerlocher.ovirt-guest-agent
+
+- name: install Ovirt Guest Agent
+  yum: name=ovirt-guest-agent state=latest
+  notify: enabled Ovirt Guest Agent

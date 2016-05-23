@@ -1,0 +1,28 @@
+---
+galaxy_info:
+  author: Simon Baelocher <sbaerlocher@sbaerlocher.ch>
+  description: Install Ovirt Guest Agent
+  license: license (MIT)
+  min_ansible_version: 2
+  platforms:
+   - name: EL
+     versions:
+      - 5
+      - 6
+   - name: Fedora
+     versions:
+      - 16
+      - 17
+      - 18
+   - name: Ubuntu
+     versions:
+      - precise
+      - quantal
+      - raring
+      - saucy
+   - name: Debian
+     versions:
+      - wheezy
+  categories:
+   - system
+dependencies: []
