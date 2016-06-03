@@ -9,13 +9,11 @@
     - "vars/{{ ansible_os_family }}.yml"
     - "vars/defaults.yml"
 
-- name: add OS specific task
-  include: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
-    - "{{ ansible_distribution }}.yml"
-    - "{{ ansible_os_family }}.yml"
-    - "defaults.yml"
+- name: install Ovirt Guest Agent
+  package: name={{ item }} state=latest
+  with_items:
+    - "{{ ovirt_package }}"
+  notify: enabled Ovirt Guest Agent
 
 - name: restart Ovirt Guest Agent
   service: name={{ ovirt_guest_agent_service_name }} state=restarted

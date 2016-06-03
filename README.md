@@ -32,7 +32,11 @@ None
 
 ### 1.0
 
-* Initial release
+* initial release
+
+### 1.1
+
+* add debian support and new syntax
 
 ## Author
 
