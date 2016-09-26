@@ -9,6 +9,11 @@
     - "vars/{{ ansible_os_family }}.yml"
     - "vars/defaults.yml"
 
+- block:
+  - apt_repository: repo='deb http://download.opensuse.org/repositories/home:/evilissimo:/deb/Debian_7.0/ ./' state=present
+  - apt_key: id=73A1A299 url=http://download.opensuse.org/repositories/home:/evilissimo:/deb/Debian_7.0/Release.key state=present
+  when: ansible_distribution == "Debian"
+
 - name: install Ovirt Guest Agent
   package: name={{ item }} state=latest
   with_items:
