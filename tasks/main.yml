@@ -18,7 +18,6 @@
   package: name={{ item }} state=latest
   with_items:
     - "{{ ovirt_package }}"
-  notify: enabled Ovirt Guest Agent
-
-- name: restart Ovirt Guest Agent
-  service: name={{ ovirt_guest_agent_service_name }} state=restarted
+  notify:
+    - enabled Ovirt Guest Agent
+    - restart Ovirt Guest Agent
