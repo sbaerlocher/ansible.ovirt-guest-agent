@@ -30,13 +30,17 @@ None
 
 ## Changelog
 
+### 1.1
+
+* add debian support
+* add new syntax
+* add tags
+* fix bugs
+
 ### 1.0
 
 * initial release
 
-### 1.1
-
-* add debian support and new syntax
 
 ## Author
 
