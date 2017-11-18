@@ -13,45 +13,36 @@
     - packages
 
 - block:
-  - name: install EPEL repo
-    yum:
-      name: "{{ ovirt_repo_url }}"
-      state: present
-    register: result
-    until: '"failed" not in result'
-    retries: 5
-    delay: 10
-  - name: install Ovirt Guest Agent
-    yum: 
-      name: "{{ item }}"
-      state: latest
-    with_items:
-      - "{{ ovirt_package }}"
-    notify:
-      - enabled Ovirt Guest Agent
-      - restart Ovirt Guest Agent
+    - name: install EPEL repo
+      yum:
+        name: "{{ ovirt_repo_url }}"
+        state: present
+      register: result
+      until: '"failed" not in result'
+      retries: 5
+      delay: 10
+    - name: install Ovirt Guest Agent
+      yum:
+        name: "{{ item }}"
+      with_items:
+        - "{{ ovirt_package }}"
+      notify:
+        - enabled Ovirt Guest Agent
+        - restart Ovirt Guest Agent
   when: ansible_distribution == "CentOS"
   tags:
     - packages
 
 - block:
-  - apt_repository: 
-      repo: "deb http://download.opensuse.org/repositories/home:/evilissimo:/deb/Debian_7.0/ ./"
-      state: present
-  - apt_key: 
-      id: 73A1A299 
-      url: http://download.opensuse.org/repositories/home:/evilissimo:/deb/Debian_7.0/Release.key 
-      state: present
-  - name: install Ovirt Guest Agent
-    apt:
-      name: "{{ item }}"
-      state: latest
-      force: yes
-    with_items:
-      - "{{ ovirt_package }}"
-    notify:
-    - enabled Ovirt Guest Agent
-    - restart Ovirt Guest Agent
+    - name: install Ovirt Guest Agent
+      apt:
+        name: "{{ item }}"
+        force: yes
+      with_items:
+        - "{{ ovirt_package }}"
+      notify:
+        - enabled Ovirt Guest Agent
+        - restart Ovirt Guest Agent
   when: ansible_distribution == "Debian"
   tags:
     - packages
