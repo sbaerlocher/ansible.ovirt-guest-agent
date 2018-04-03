@@ -30,6 +30,11 @@ None
 
 ## Changelog
 
+### 1.2
+
+* add new role ckeck
+* remove eple repo
+
 ### 1.1
 
 * add debian support
