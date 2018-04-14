@@ -1,0 +1,19 @@
+---
+# tasks file for sbaerlocher.ovirt-guest-agent
+
+- name: "{{ ansible_distribution | lower }} | include sbaerlocher.virtio role"
+  include_role:
+    name: sbaerlocher.virtio
+  vars:
+    virtio_win_iso_url: "{{ ovirt_win_iso_url }}"
+    virtio_win_iso_name: "{{ ovirt_win_iso_name }}"
+    virtio_win_ovirt: true
+  tags:
+    - packages
+
+- name: "{{ ansible_distribution | lower }} | install Ovirt Guest Agent"
+  win_package:
+    path: "{{ virtio_win_iso_path }}\\ovirt-guest-tools-setup.exe"
+    creates_path: "{{ ansible_env['ProgramFiles(x86)'] }}\\oVirt Guest Tools"
+  tags:
+    - packages

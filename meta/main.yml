@@ -24,6 +24,10 @@ galaxy_info:
     - name: Debian
       versions:
         - wheezy
+    - name: Windows
+      versions:
+        - all
   categories:
     - system
-dependencies: []
+dependencies: 
+  - sbaerlocher.virtio

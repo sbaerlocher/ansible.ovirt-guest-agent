@@ -1,0 +1,14 @@
+---
+# tasks file for sbaerlocher.ovirt-guest-agent
+
+- name: install Ovirt Guest Agent
+  become: true
+  package:
+    name: "{{ item }}"
+  with_items: "{{ ovirt_package }}"
+  when: ansible_system_vendor == 'oVirt'
+  notify:
+    - enabled Ovirt Guest Agent
+    - restart Ovirt Guest Agent
+  tags:
+    - packages
