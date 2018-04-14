@@ -1,7 +1,6 @@
 # Ansible Role: Ovirt Guest Agent
 
-[![Build Status](https://travis-ci.org/sbaerlocher/ansible.ovirt-guest-agent.svg?branch=master)](https://travis-ci.org/sbaerlocher/ansible.ovirt-guest-agent)
-
+[![Build Status](https://travis-ci.org/sbaerlocher/ansible.ovirt-guest-agent.svg?branch=master)](https://travis-ci.org/sbaerlocher/ansible.ovirt-guest-agent) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://sbaerlo.ch/licence) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-ovirt--guest--agent-blue.svg)](https://galaxy.ansible.com/sbaerlocher/ovirt-guest-agent)
 ## Description
 
 Ansible role for installing Ovirt Guest Agent on installs RHEL/CentOS.
