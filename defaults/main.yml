@@ -3,3 +3,5 @@
 
 ovirt_package: []
 ovirt_guest_agent_service_name: []
+ovirt_win_iso_url: http://resources.ovirt.org/pub/ovirt-4.2/iso/oVirt-toolsSetup/4.2-1.el7.centos/oVirt-toolsSetup-4.2-1.el7.centos.iso
+ovirt_win_iso_name: oVirt-toolsSetup.iso
