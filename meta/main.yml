@@ -1,10 +1,9 @@
 ---
-
 galaxy_info:
   author: Simon Baelocher <sbaerlocher@sbaerlocher.ch>
   description: Install Ovirt Guest Agent
   license: license (MIT)
-  min_ansible_version:
+  min_ansible_version: 2.9
   platforms:
     - name: EL
       versions:
@@ -27,7 +26,7 @@ galaxy_info:
     - name: Windows
       versions:
         - all
-  categories:
+  galaxy_tags:
     - system
 
 dependencies: []
